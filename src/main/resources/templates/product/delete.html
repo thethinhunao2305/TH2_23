@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1>Are you sure you want to delete this product?</h1>
+	<form th:action="@{/products/delete-product/{id}(id=${product.id})}" th:object="${product}" method="post">
+		<div style="margin-left: 35px"  class="form-group">
+			<label for="">Product code:</label>
+			<span th:text="*{code}" id=""></span>
+		</div>
+		<div style="margin-left: 35px"  class="form-group">
+			<label for="">Product description:</label>
+			<span th:text="*{description}" id=""></span>
+		</div>
+		<div style="margin-left: 35px"  class="form-group">
+			<label for="">Product price:</label> 
+			<span th:text="*{price}" id=""></span>
+		</div>
+		<br>
+		<button name="choose" value="yes" type="submit" class="btn btn-primary">Yes</button>
+		<button style = "margin-left: 10px" name="choose" value="no" type="submit" class="btn btn-primary">No</button>
+	</form>
+</body>
+</html>
